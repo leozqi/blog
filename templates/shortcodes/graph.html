@@ -12,7 +12,7 @@
           label: '{{ x_label | safe }}'
         },
         yAxis: {
-          label: '{{ x_label | safe }}'
+          label: '{{ y_label | safe }}'
         },
         data: [
           {{ body | safe }}
@@ -21,4 +21,5 @@
     }, false);
   </script>
   <div id="{{ ref | slugify }}" style="overflow: scroll;"></div>
+  <center><p>{{ caption }}</p></center>
 </details>

@@ -121,7 +121,7 @@ section {
 	text-decoration: inherit;
 }
 
-.theorem, .example {
+.theorem, .example, .graph {
 	border-left: 5px solid;
 	padding-left: 0.5em;
 	padding-right: 1em;
@@ -135,6 +135,10 @@ section {
 
 .example {
 	color: #b366ff;
+}
+
+.graph {
+	color: #245eb5;
 }
 
 .theorem p, .example p {
