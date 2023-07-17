@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/katex.min.css" />
+<script defer src="/katex.min.js"></script>
+<script defer src="/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+
+{% endblock %}
+
+{% block content %}
+<h1 class="title">{{ page.title }}</h1>
+
+<time><em>{{ page.date | date(format="%d %B, %Y") }}</em></time>
+
+{{ page.content | safe }}
+
+<script defer src="https://comments.leozqi.com/js/commento.js"></script>
+<div id="commento"></div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+{% endblock %}

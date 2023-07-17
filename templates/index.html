@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">{{ section.title }}</h1>
+
+{{ section.content | safe }}
+
+{% set notes = get_section(path="notes/_index.md") %}
+<ul class="cardholder">
+{% for page in notes.pages %}
+  <a class="cardlink" href="{{ page.permalink }}">
+    <li class="card">
+      <div class="cardheader">
+        <h3>{{ page.title }}</h3>
+        <time><em>{{ page.date | date(format="%d %B, %Y") }}</em></time>
+      </div>
+      {{ page.summary | safe }}
+    </li>
+  </a>
+{% endfor %}
+</ul>
+
+{% endblock content %}
