@@ -18,6 +18,12 @@ $$N(x)=\sum^N_k [y_o,\ldots,y_k]
 
 {% end %}
 
+{% graph(ref="Quadratic", x_label="x", y_label="y") %}
+{ fn: 'x^2' },
+{ fn: 'x' }
+{% end %}
+
+
 ## The b2
 
 Parent: [[Power series]]
