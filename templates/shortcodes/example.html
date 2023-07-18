@@ -1,4 +1,4 @@
-<details class="example">
+<details class="example" open>
   <summary class="ref"><a href="#{{ ref | slugify }}">Example {{ nth }}: {{ ref }}</a></summary>
-  <p>{{ body | safe }}</p>
+  {{ body | markdown(inline=false) | safe }}
 </details>
