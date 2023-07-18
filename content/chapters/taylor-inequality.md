@@ -161,3 +161,38 @@ We take this as \(K\). The maximum distance from our centred point, \(\lvert x-x
 
 
 {% end %}
+
+## Tests of convergence
+
+<!-- THEOREM ------------------------------------------------------------->
+{% theorem(ref="Ratio test") %}
+Consider a series $\sum a_n$, $a_n>0$. Let $\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=L$. Then:
+
+- If $L < 1$, the series converges.
+- If $L > 1$, the series diverges.
+- If $L=1$, the test is inconclusive.
+
+{% end %}
+<!-- END THEOREM --------------------------------------------------------->
+
+<!-- EXAMPLE ------------------------------------------------------------->
+{% example(ref="Proof of the ratio test") %}
+Consider the limit $\lim_{n\to\infty} \frac{a_{n+1}}{a_n}=L$.
+
+Then $L < 1\implies \exists r < 1, \exists n_o: \forall n > n_o$:
+
+$$a_{n_o+1}\le r a_{n_o}$$
+
+$$a_{n_o+2}\le r a_{n_o+1} \le r^2a_{n_o}$$
+
+and so on.
+
+Then we find that:
+
+$$\sum^\infty_{n=n_o}a_n \le a_{n_o}\sum^\infty_{k=0}r^k < \infty$$
+
+In a similar way, the series diverges if $L > 1$ 
+
+{% end %}
+<!-- END EXAMPLE --------------------------------------------------------->
+

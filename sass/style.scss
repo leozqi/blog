@@ -141,7 +141,7 @@ section {
 	color: #245eb5;
 }
 
-.theorem p, .example p {
+.theorem p, .example p, .theorem li, .example li {
 	color: black;
 	margin-top: 0.5em;
 	padding-top: 0;
@@ -153,24 +153,24 @@ pre {
 	overflow: auto;
 }
 
-details ul, details li {
+aside details ul, details li {
      position: relative;
 }
 
-details li::before, details li::after {
+aside details li::before, details li::after {
     content: "";
     position: absolute;
     left: -12px;
 }
 
-details li::before {
+aside details li::before {
     border-top: 1px solid #000;
     top: 9px;
     width: 8px;
     height: 0;
 }
 
-details li::after {
+aside details li::after {
     border-left: 1px solid #000;
     height: 100%;
     width: 0px;
@@ -183,11 +183,11 @@ details li::after {
 	padding-right: 0.1em;
 }
 
-details li:last-child::after {
+aside details li:last-child::after {
     height: 8px;
 }
 
-details li {
+aside details li {
 	list-style-type: none;
 }
 
