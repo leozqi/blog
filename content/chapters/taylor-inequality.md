@@ -11,18 +11,17 @@ _Given a set of $n$ data points, how can we find a smooth curve passing through 
 
 We may always find a polynomial of degree \\(n-1\\) capable of passing through \\(n\\) data points. The **Newton polynomial** is one algorithm for finding the coefficients.
 
+<!-- THEOREM ------------------------------------------------------------->
 {% theorem(ref="Newton interpolation polynomial") %}
 Given $k$ points $(x_i,y_i)$ where no two $x_i$ are the same, the Newton interpolation polynomial is given by the equation
 
-$$N(x)=\sum^N_k [y_o,\ldots,y_k]
+$$N(x)=\sum^N_k \left( [y_o,\ldots,y_k] \prod^{k-1}_{i=0}(x-x_i)\right )$$
 
+For the special case where the points are equidistant in the $x$-axis by $h$ from each other, we may reduce the divided difference $[y_o,\ldots,y_k]$ to:
+
+$$N(x)=\sum^N_k \left( \frac{\Delta^n y_0}{n!\,h^n} \prod^{k-1}_{i=0}(x-x_i)\right )$$
 {% end %}
-
-{% graph(ref="Quadratic", x_label="x", y_label="y") %}
-{ fn: 'x^2' },
-{ fn: 'x' }
-{% end %}
-
+<!-- END THEOREM --------------------------------------------------------->
 
 ## The b2
 
