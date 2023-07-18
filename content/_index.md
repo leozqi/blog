@@ -1,8 +1,6 @@
 +++
-title = "Hi!"
+title = "Electricity and Magnetism"
 template = "index.html"
 +++
 
-I'm Leo Qi, a computer engineering student at the University of Waterloo.
-
-**Links:** [Nextcloud](https://cloud.leozqi.com) · [Paperless-ngx](https://paperless.leozqi.com) · [Résumé](/resume.pdf) 
+We develop Maxwell's equations to describe the electric and magnetic field's behaviours in all situations. We relate electricity and magnetism.

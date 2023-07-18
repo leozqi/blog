@@ -10,11 +10,13 @@ The **magnetic field** is produced by moving charge. We distinguish two scenario
 
 Force due to the magnetic field and electric field together is known as the **Lorentz force**.
 
+<!-- THEOREM ------------------------------------------------------------->
 {% theorem(ref="Lorentz Law (1895)") %}
 Given a charge $q$ travelling at velocity $\vec v$, the instantaneous force acting it due to the sum of electric and sum of magnetic fields at that point is given as:
 
 $$F = q(\vec{E} + \vec{v}\times \vec{B})$$
 {% end %}
+<!-- END THEOREM --------------------------------------------------------->
 
 Force due to the magnetic field is **relativistic**, unlike that of the electric field. It must be calculated using velocity relative to that of the observer.
 
@@ -108,4 +110,43 @@ $$
 {vector: [1, 1], offset: [0, 2], graphType: 'polyline', fnType: 'vector'}
 {% end %}
 
+## Faraday's law
 
+Electromagnetic induction is the phenomenon where a changing magnetic field around a closed circuit induces an electric curent in the circuit.
+The greater the _rate of change_ in the magnetic field, the greater the electric current and voltage.
+
+Faraday performed three experiments:
+
+3. Moving a current-carrying wire will induce a current in the neighbouring coil.
+4. If the stationary circuit had an on/off switch will also induce a current in the adjacent coil circuit.
+
+The common element that induced a current was a changing magnetic field with respect to time.
+We quantify this change with respect to _magnetic flux_ and the _electromotive force_.
+
+### Magnetic flux
+
+The magnetic flux quantizes the amount of magnetic field passing through a surface.
+
+$$\Phi_B = \int \vec{B}\cdot d\vec{A}$$
+
+The magnetic flux through a **closed surface** (surface associated with a volume) is equal to zero.
+There is no "magnetic charge" or magnetic monopoles.
+
+<!-- THEOREM ------------------------------------------------------------->
+{% theorem(ref="Faraday's Law of Induction (1834)") %}
+The electromotive force, $\epsilon$, around a closed path is equal to the negative of the time rate of change of the magnetic flux enclosed by the path.
+
+$$\epsilon=V_\text{ind}=\oint\vec{E}\cdot d\vec{l}= -\frac{d\Phi_B}{dt}$$
+{% end %}
+<!-- END THEOREM --------------------------------------------------------->
+
+Note that this means induced voltage is related to a _change in flux_, not the flux itself.
+The negative sign is from Lenz's law.
+It states that the direction of induced current will be opposite to the direction of the change in magnetic flux.
+However, this sign does not carry over to the equation of Lorentz Law according to the conventions of electrical engineers.
+
+<!-- THEOREM ------------------------------------------------------------->
+{% theorem(ref="Lenz's Law (1834)") %}
+The current induced in a circuit due to a change in a magnetic field is directed to oppose the change in flux and to exert a mechanical force which opposes the motion.
+{% end %}
+<!-- END THEOREM --------------------------------------------------------->
