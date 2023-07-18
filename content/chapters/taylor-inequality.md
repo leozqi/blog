@@ -23,11 +23,36 @@ $$N(x)=\sum^N_k \left( \frac{\Delta^n y_0}{n!\,h^n} \prod^{k-1}_{i=0}(x-x_i)\rig
 {% end %}
 <!-- END THEOREM --------------------------------------------------------->
 
-## The b2
+<!-- THEOREM ------------------------------------------------------------->
+{% theorem(ref="Lagrange interpolating polynomial") %}
+Given $n$ points $(x_i,y_i),\,i\in\mathbb{N}$, the Lagrange interpolating polynomial fitting all of them is:
 
-Parent: [[Power series]]
-***
-#MATH119
+$$L(x)=\sum^n_{k=0}\left ( y_k \prod^n_{j=0,j\ne k} \frac{x-x_j}{x_k-x_j} \right )$$
+{% end %}
+
+## Taylor polynomial
+
+We develop the idea of Taylor polynomials from linear approximations.
+For any continuous curve, we may approximate its values around a central point $x_0$ by
+
+1. Finding the tangent line to the curve at $x_0$ as a function of $x$
+2. Evaluating the tangent line's value at points next to $x_0$
+
+Therefore, $f(x)\approx f(x_0) + f'(x_0)(x-x_0)$ as a linear approximation.
+
+Could we do this with a quadratic function? Yes. Choose two points around $x_0$ with equal $\Delta x$ away from $x_0$ and take the limit as it approaches zero. The resulting function of $x$ is the quadratic approximation:
+
+$$f(x)\approx f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2$$
+
+We find that this approximation will always be more accurate than the linear approximation. For example, for the function $\sin(x)$:
+
+{% graph(ref="Sine function approximated", x_label="x", y_label="y", caption="Approximations of the sine function centred at $x=0$") %}
+{ fn: 'sin(x)' },
+{ fn: 'x' },
+{ fn: 'x-0.5x^2'}
+{% end %}
+
+
 
 > an infinite series that converges to any selected, continuous function within a range.
 
