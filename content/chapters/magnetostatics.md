@@ -137,16 +137,42 @@ There is no "magnetic charge" or magnetic monopoles.
 The electromotive force, $\epsilon$, around a closed path is equal to the negative of the time rate of change of the magnetic flux enclosed by the path.
 
 $$\epsilon=V_\text{ind}=\oint\vec{E}\cdot d\vec{l}= -\frac{d\Phi_B}{dt}$$
+
+Conversely, we may relate $\epsilon$ to the electric field:
+
+$$\nabla\times E(r, t)= -\frac{\partial}{\partial t}\vec B(r,t)$$
+
+This result is called the _Maxwell-Faraday law_ and is one of Maxwell's equations for electromagnetism.
+{% end %}
+<!-- END THEOREM --------------------------------------------------------->
+
+<!-- THEOREM ------------------------------------------------------------->
+{% theorem(ref="Faraday's Law Corollary") %}
+Using the fact that the magnetic force component of the [Lorentz force](./#lorentz-law-1895) is given by $\vec F_m=q(\vec v\times\vec B)=q\vec E$, we may write Faraday's Law as:
+
+$$\epsilon=V_\text{ind}=\oint(\vec v\times\vec B)\cdot d\vec{l} = -\frac{d\Phi_B}{dt}$$
 {% end %}
 <!-- END THEOREM --------------------------------------------------------->
 
 Note that this means induced voltage is related to a _change in flux_, not the flux itself.
 The negative sign is from Lenz's law.
 It states that the direction of induced current will be opposite to the direction of the change in magnetic flux.
-However, this sign does not carry over to the equation of Lorentz Law according to the conventions of electrical engineers.
+This allows the result to be used immediately in the formulation of Lenz's law.
+
+Note that Faraday's Law has three scenarios:
+
+1. $\vec B$ is time-varying: we have induced voltage. This scenario is called the "transformer electro-motive force."
+2. Circuit or $A$ is moving/time-varying: we have induced voltage. This scenario is called "motional electromotive force."
+3. 
 
 <!-- THEOREM ------------------------------------------------------------->
 {% theorem(ref="Lenz's Law (1834)") %}
 The current induced in a circuit due to a change in a magnetic field is directed to oppose the change in flux and to exert a mechanical force which opposes the motion.
 {% end %}
 <!-- END THEOREM --------------------------------------------------------->
+
+## Self-inductance
+
+The inductance as magnetic flux from the current itself. Induced current from current.
+
+
