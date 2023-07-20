@@ -1,4 +1,4 @@
-<details class="theorem" open>
-  <summary class="ref"><a href="#{{ ref | slugify }}">Theorem {{ nth }}: {{ ref }}</a></summary>
-  <p>{{ body | markdown(inline=false) | safe }}</p>
+<details class="theorem" id="{{ ref | slugify }}" open>
+  <summary class="ref">Theorem {{ nth }}: {{ ref }}</summary>
+  {{ body | markdown(inline=false) | safe }}
 </details>
