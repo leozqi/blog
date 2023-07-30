@@ -117,3 +117,40 @@ For any PMF on some finite sample space $S$ and any $A,B\subseteq S$,
 $$Pr\set{A\cup B}\le Pr\set{A} + Pr\set{B}$$
 {% end %}
 
+## Building probability mass functions
+
+{% theorem(ref="Bernoulli Trial") %}
+A _Bernoulli trial_ is an event that has two distinct outcomes, labelled "pass" (P) and "fail" (F). The probability of the elementary event $\set{P}$ happening is normally denoted by $p$, while the probability of the elementary event $\set{F}$ is denoted by $q$.
+{% end %}
+
+{% theorem(ref="Bernoulli Distribution") %}
+Let $S=\set{P,F}$. If $p$ is the probability that a Bernoulli trial passes and $X:S\to\mathbb{R}$ is an indicator random variable on $S$ defined by $X(\set{F})=0$ and $X(\set{P})=1$, then the Bernoulli distribution on $S$ an be written as:
+
+$$Pr\set{X=x}=p^x(1-p)^{1-x}$$
+{% end %}
+
+{% example(ref="Exercise") %}
+_There are 8 different CDs and 12 different books. Alice first picks up one CD or book and the Bob picks up one remaining CD and book. What is the number of possible outcomes?_
+
+If Alice chooses a CD first, we have the number of outcomes from this case to be ${8\choose 1}{7\choose 1}{12\choose 1}=12\times 8\times 7$.
+
+If Alice chooses a book first, we have the number of outcomes ot be ${12\choose 1}{11\choose 1}{8\choose 1}=12\times 8\times 11$.
+
+We add the two cases and get an answer of $12\times 8\times 18=1728$.
+
+{% end %}
+
+{% example(ref="Exercise 1") %}
+_Suppose $A,B\subseteq S$ are mutually exclusive. Prove $Pr\set{\overline{A}\cup\overline{B}}=1$._
+
+$$
+\begin{align*}
+A,B\subseteq S &\implies Pr\set{A\cap B}=0\\\\
+\text{By DeMorgan's Law}&\\\\
+Pr\set{\overline{A}\cup\overline{B}} &= Pr\set{\overline{A\cap B}}\\\\
+\text{By Theorem}&\\\\
+&= 1 - Pr\set{A\cap B}\\\\
+&= 1
+\end{align*}
+$$
+{% end %}

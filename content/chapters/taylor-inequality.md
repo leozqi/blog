@@ -138,8 +138,6 @@ for some real number $\xi_C$ between $a$ and $x$.
 {% end %}
 <!-- END THEOREM --------------------------------------------------------->
 
-
-
 ## Taylor series
 
 The _Taylor series_ is a Taylor polynomial with $n\to\infty$.
@@ -149,7 +147,13 @@ $$\sum^\infty_{n=0} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n$$
 
 > We take the order-zero derivative of $f$ to be $f$ itself. $(x-a)^0$ and $0!$ are defined to be 1.
 
-## Taylor's
+## Common infinite series
+
+{% theorem(ref="p-Series") %}
+The $p$-Series is an infinite series of the form:
+
+$$\sum^\infty_{n=1}\frac{1}{n^p}$$
+{% end %}
 
 ## Tests of convergence
 
