@@ -39,7 +39,7 @@
 	--fonts-serif: LibertinusSerif;
 }
 
-html                { overflow-y: scroll; }
+html                { overflow-y: scroll; background-color: #EEEEEE; font-size: 1.2em; }
 body                { font-family: var(--fonts-sans-serif); }
 h1, h2, h3, h4, h5  { font-family: var(--fonts-sans-serif); }
 details             { margin: 1em 0 1em 0; }
@@ -88,7 +88,7 @@ aside {
 	align-self: start;
 	position: sticky;
 	top: 4%;
-	font-size: 0.8em;
+	font-size: 1em;
 }
 
 section {
@@ -121,7 +121,7 @@ section {
 	text-decoration: inherit;
 }
 
-.theorem, .example, .graph {
+.theorem, .example, .graph, .definition{
 	border-left: 5px solid;
 	padding-left: 0.5em;
 	padding-right: 1em;
@@ -141,14 +141,17 @@ section {
 	color: #245eb5;
 }
 
-.theorem p, .example p, .theorem li, .example li {
+.definition {
+	color: #bd2b2b;
+}
+
+.theorem p, .example p, .theorem li, .example li, .definition p, .definition li {
 	color: black;
 	margin-top: 0.5em;
 	padding-top: 0;
-	opacity: 80%;
 }
 
-.theorem summary, .example summary, .graph summary {
+.theorem summary, .example summary, .graph summary, .definition summary {
 	color: blue;
 	text-decoration: underline;
 }
