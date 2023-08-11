@@ -1,5 +1,5 @@
 +++
-title="8. Discrete probability"
+title="108.8 · Discrete probability"
 date=2023-07-18
 +++
 

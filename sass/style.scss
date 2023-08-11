@@ -39,7 +39,7 @@
 	--fonts-serif: LibertinusSerif;
 }
 
-html                { overflow-y: scroll; background-color: #EEEEEE; font-size: 1.2em; }
+html                { overflow-y: scroll; background-color: #EEEEEE; font-size: 1.1em; }
 body                { font-family: var(--fonts-sans-serif); }
 h1, h2, h3, h4, h5  { font-family: var(--fonts-sans-serif); }
 details             { margin: 1em 0 1em 0; }
@@ -89,6 +89,7 @@ aside {
 	position: sticky;
 	top: 4%;
 	font-size: 1em;
+	overflow-y: auto;
 }
 
 section {

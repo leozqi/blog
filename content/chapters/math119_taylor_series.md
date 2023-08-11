@@ -1,5 +1,5 @@
 +++
-title="8. Taylor series and approximation"
+title="119.8 · Taylor series approximation"
 date=2023-07-12
 +++
 
