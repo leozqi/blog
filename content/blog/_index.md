@@ -1,7 +1,6 @@
 +++
-title = "Posts"
-sort_by = "title"
+title = "Blog"
+sort_by = "update_date"
 template = "list.html"
 page_template = "page.html"
-paginate_by = 2
 +++
