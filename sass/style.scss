@@ -18,17 +18,17 @@
 	--fonts-sans-serif: LibertinusSans;
 	--fonts-serif: LibertinusSerif;
 	--bg-colour: #E7E7E7;
-	font-smooth: always;
 }
 
 html { margin: 0; overflow-y: scroll; background-color: var(--bg-colour); }
 body { margin: 0; font-family: var(--fonts-serif); }
 main { display: grid; grid-template-columns: 1fr min-content 1fr; grid-auto-rows: 1fr min-content; margin: 0 1vw 0 1vw; }
-header { position: sticky; top: 0%; z-index: 1; padding: 1vh 1vw 1vh 1vw; background-color: var(--bg-colour) }
+header { position: sticky; top: 0%; z-index: 1; padding: 1vh 1vw 1vh 1vw; background-color: var(--bg-colour); }
+nav { border-top: 1px solid; margin-left: 3vw; padding: 0 0 0 3vw; }
 aside  { width: max-content; height: min-content; position: sticky; top: 38px; font-size: 0.8em; margin: 0; }
-#left  { grid-column: 1; grid-row: 1; margin-left: auto; }
+#left  { grid-column: 1; grid-row: 1; margin-left: auto; margin-right: 50px; }
 #right { grid-column: 3; grid-row: 1; margin-left: 50px; margin-right: auto; }
-section { grid-row: 1; grid-column: 2; padding: 0 5% 10% 5%; width: 50vw; max-width: 35em; }
+section { grid-row: 1; grid-column: 2; width: 50vw; max-width: 35em; }
 
 h1,h2,h3,h4,h5 { font-family: var(--fonts-sans-serif); }
 details { margin: 1em 0 1em 0; }
@@ -43,7 +43,7 @@ details ul { max-height: 20vh; overflow-y: scroll; margin: 0.2em 0 0.2em 0; padd
 table { border-collapse: collapse; }
 th,td { text-align: left; padding: 0.2em 0.6em 0.2em 0.6em; }
 thead,tr { border-bottom: 1px dotted; }
-nav { display: flex; max-width: 12em; }
+nav { display: flex; width: min-content; }
 nav strong { white-space: nowrap; }
 nav a { padding: 0.2em; margin: 0.2em; color: inherit; flex-grow: 1; }
 blockquote { margin: 20px 0 30px; padding-left: 20px; border-left: 1px dotted; opacity: 80%; }
