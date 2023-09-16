@@ -3,6 +3,8 @@ title="250.1 · Abstract data types (ADT)"
 date=2023-09-15
 +++
 
+> When _using_ an ADT, we focus on the operations specified in the API and pay no attention to the data representation; when _implementing_ an ADT, we focus on the data, then implement operations on that data. [2]
+
 An "abstract data type" (ADT) is a mathematical model describing a data structure,
 for which there can be multiple implementations. This note describes:
 
@@ -82,7 +84,44 @@ classDiagram
 
 ## Lists, stacks, and queues
 
-The basis for these three _ordered_ ADTs is the linked list. We define the 
+The basis for these three _ordered_ ADTs is the linked list.
+We define a "struct" (multiple primitive data types packed together into one sized sector) that has a pointer (or address) of the item next in the list.
+By following these "next" addresses, the data structure creates an ordered relationship of consecutive data items.
+
+{% mermaid() %}
+flowchart LR
+	A[Item 0] -->|Node *next| B[Item 1] -->|Node *next| C[NULL]
+{% end %}
+
+```c
+struct Node {
+	int data;
+	Node *next;
+};
+
+Node *create_list() {
+	Node *node = (Node *) malloc(sizeof(Node));
+	node->next = NULL;
+	return node;
+}
+
+void push(Node *head, Node *insert) {
+	Node *current_item = head;
+	while (current_item->next != NULL) {
+		current_item = current_item->next;
+	}
+	current_item->next = insert;
+}
+
+void pop(Node *head) {
+	Node *current_item = head;
+	while (current_item->next != NULL) {
+		current_item = current_item->next;
+	}
+	free(current_item->next); /* deallocates the memory */
+	current_item->next = NULL;
+}
+```
 
 ## Trees
 
@@ -96,8 +135,12 @@ The basis for these three _ordered_ ADTs is the linked list. We define the 
 
 ## Bibliography
 
-1. D. Harder. (2023). Algorithms and Data Structures [Online]. Available: <https://ece.uwaterloo.ca/~dwharder/aads/>
-
+{% bib(link="https://ece.uwaterloo.ca/~dwharder/aads/") %}
+D. Harder. (2023). Algorithms and Data Structures [Online].
+{% end %}
+{% bib(link="javascript:void(0)") %}
+R. Sedgewick, K. Wayne, _Algorithms_, 4th ed. USA: Addison-Wesley, 2011. 
+{% end %}
 
 ## Data
 
