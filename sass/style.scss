@@ -24,12 +24,12 @@ html { margin: 0; overflow-y: scroll; background-color: var(--bg-colour); scroll
 body { margin: 0; font-family: var(--fonts-serif); }
 main { display: grid; grid-template-columns: 1fr min-content 1fr; grid-auto-rows: 1fr min-content; margin: 0 1vw 0 1vw; }
 header { position: sticky; top: 0%; z-index: 1; padding: 1vh 1vw 1vh 1vw; background-color: var(--bg-colour); }
-.navformat { max-width: 50em; margin: auto; }
+nav { border-top: 1px solid; margin-left: 3vw; padding: 0 0 0 3vw; }
 .hanging { padding-left: 22px; text-indent: -22px; } 
 aside  { width: max-content; height: min-content; position: sticky; top: 38px; font-size: 0.8em; margin: 0; }
 #left  { grid-column: 1; grid-row: 1; margin-left: auto; margin-right: 50px; }
 #right { grid-column: 3; grid-row: 1; margin-left: 50px; margin-right: auto; }
-section { grid-row: 1; grid-column: 2; width: 50vw; max-width: 35em; }
+section { grid-row: 1; grid-column: 2; width: 50vw; max-width: 35em; padding-bottom: 10em; }
 
 h1,h2,h3,h4,h5 { font-family: var(--fonts-sans-serif); }
 details { margin: 1em 0 1em 0; }
@@ -69,8 +69,7 @@ pre { background-color: inherit !important; padding: 0.2em 1em 0.2em 1em; overfl
 pre span { font-size: 0.9em; }
 code { font-size: 0.9em; }
 p { text-align: justify; text-justify: inter-character; }
-.mermaid { overflow: scroll; }
-.mermaid svg { max-height: 4em; width: auto; }
+.mermaid { overflow: scroll; background-color: color-mix(in srgb, var(--bg-colour) 60%, white); border-radius: 25px; padding: 10px; }
 
 .katex { font-size: 1.0em !important; padding: 0 0.1em 0 0.1em; }
 
