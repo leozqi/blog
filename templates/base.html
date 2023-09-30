@@ -47,7 +47,7 @@
 
   <aside id="right">
     {% set root = get_section(path="./_index.md") %}
-    {% for section in root.subsections | reverse %}
+    {% for section in root.subsections | sort | reverse %}
       {% set sub = get_section(path=section) %}
       <details open="">
         <summary>{{ sub.title }}</summary>

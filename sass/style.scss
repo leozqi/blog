@@ -65,10 +65,9 @@ aside details li::before { border-top: 1px solid #000; top: 9px; width: 8px; hei
 aside details li::after { border-left: 1px solid #000; height: 100%; width: 0px; top: 2px; }
 aside details li:last-child::after { height: 8px; }
 aside details li { list-style-type: none; }
-pre { background-color: inherit !important; padding: 0.2em 1em 0.2em 1em; overflow: scroll; padding: 10px 0 10px 0; border-bottom: 1px dotted; border-top: 1px dotted; }
+pre { overflow: scroll; padding: 10px 0 10px 0; background-color: color-mix(in srgb, var(--bg-colour) 60%, white) !important; border-radius: 25px; padding: 10px; }
 pre span { font-size: 0.9em; }
 code { font-size: 0.9em; }
-p { text-align: justify; text-justify: inter-character; }
 .mermaid { overflow: scroll; background-color: color-mix(in srgb, var(--bg-colour) 60%, white); border-radius: 25px; padding: 10px; }
 
 .katex { font-size: 1.0em !important; padding: 0 0.1em 0 0.1em; }
@@ -79,7 +78,7 @@ p { text-align: justify; text-justify: inter-character; }
 
 @media (max-width: 800px) {
 	main { grid-template-columns: 50% 50%; }
-	section { grid-row: 2; grid-column: 1/-1; border-right: none; border-top: 1px dotted; padding-top: 0.5em; margin-top: 0.5em; margin: 0 auto 0 auto; }
+	section { width: 80vw; grid-row: 2; grid-column: 1/-1; border-right: none; border-top: 1px dotted; padding-top: 0.5em; margin: 0 auto 0 auto; }
 	aside { position: static; padding-bottom: 0.5em; }
 	#left { grid-row: 1; grid-column: 1; }
 	#right { grid-row: 1; grid-column: 2; }
