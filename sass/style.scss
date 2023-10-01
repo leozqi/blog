@@ -81,7 +81,7 @@ section { width: 50vw; max-width: 40em; padding: 2vh 0 10em 0; }
 
 h1,h2,h3,h4,h5 { font-family: var(--fonts-sans-serif); }
 details { margin: 1em 0 1em 0; }
-details ul { max-height: 20vh; overflow-y: scroll; margin: 0.2em 0 0.2em 0; padding-left: 2.5em; }
+details ul { max-height: 30%; overflow-y: scroll; margin: 0.2em 0 0.2em 0; padding-left: 2.5em; }
 .title { margin-bottom: 0.2em; }
 .card * { margin: 0 0 0 0; }
 .card time { font-size: 0.8em; margin-top: auto; }
