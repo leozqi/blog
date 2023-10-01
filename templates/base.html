@@ -12,18 +12,36 @@
 </head>
 
 <body>
-  <header>
+
+<div id="sidebar">
+  <div id="bookmarks">
+    {% set root = get_section(path="./_index.md") %}
+    {% for section in root.subsections | sort | reverse %}
+      {% set sub = get_section(path=section) %}
+      <div class="dropdown">
+        <a class="dropbtn" href="{{ sub.permalink }}">&#x25BC; {{ sub.title }}</a>
+        <div class="dropdown-content">
+        {% if not sub.pages %}
+          <a href="#">Nothing here yet!</a>
+        {% endif %}
+        {% for page in sub.pages %}
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
+        {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div id="centerplate">
+    <h2>Leo's blog</h2>
     <nav>
-      <a href="/"><strong>Leo's blog</strong></a>
-      <a href="mailto:leo@leozqi.com">leo@leozqi.com</a>
+      <a href="mailto:leo@leozqi.com">leo@leozqi.com</a></p>
       <a href="https://github.com/leozqi">GitHub</a>
       <a href="https://codeberg.org/leozqi">Codeberg</a>
       <a href="/atom.xml">Atom/RSS</a>
     </nav>
-  </header>
 
-<main>
-  <aside id="left">
+    <div id="toc">
     {% if page.toc %}
     <details open="">
       <summary>Table of contents:</summary>
@@ -43,43 +61,13 @@
       </ul>
     </details>
     {% endif %}
-  </aside>
-
-  <aside id="right">
-    {% set root = get_section(path="./_index.md") %}
-    {% for section in root.subsections | sort | reverse %}
-      {% set sub = get_section(path=section) %}
-      <details open="">
-        <summary>{{ sub.title }}</summary>
-        <ul>
-        {% for page in sub.pages %}
-          <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
-        {% endfor %}
-        </ul>
-      </details>
-    {% endfor %}
-  </aside>
-
+    </div>
+  </div>
+</div>
+<main>
   <section>
     {% block content %} {% endblock %}
   </section>
-
-   {% if paginator %}
-      <div>
-        {% for post in paginator.pages %}
-        <div>
-          <span>{{post.date}}</span>
-          <a href="{{ post.permalink }}">{{ post.title }}</a>
-        </div>
-        {% endfor %}
-      </div>
-      {% if paginator.previous %}
-        <a href="{{ paginator.previous }}">&lt;</a>
-      {% else %}
-        &lt;
-      {% endif %}
-      <span>{{ paginator.current_index }}</span>
-  {% endif %}
 </main>
 
 {% block scripts %}{% endblock %}

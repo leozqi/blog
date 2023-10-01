@@ -38,4 +38,10 @@
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontFamily: 'LibertinusSerif', useMaxWidth: true  });
 </script>
+<script defer esrc="jquery-3.7.1.slim.min.js"></script>
+<script defer src="jquery.hypher.js"></script>
+<script defer src="en-us.js"></script>
+<script defer>
+$('p').hyphenate('en-us');
+</script>
 {% endblock %}
