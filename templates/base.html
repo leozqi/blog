@@ -19,7 +19,7 @@
     {% for section in root.subsections | sort | reverse %}
       {% set sub = get_section(path=section) %}
       <div class="dropdown">
-        <a class="dropbtn" href="{{ sub.permalink }}">&#x25BC; {{ sub.title }}</a>
+        <a class="dropbtn" href="{{ sub.permalink }}"><span>&#x25BC; {{ sub.title }}</span></a>
         <div class="dropdown-content">
         {% if not sub.pages %}
           <a href="#">Nothing here yet!</a>
@@ -33,7 +33,7 @@
   </div>
 
   <div id="centerplate">
-    <h2>Leo's blog</h2>
+    <h2><a href="/">Leo's blog</a></h2>
     <nav>
       <a href="mailto:leo@leozqi.com">leo@leozqi.com</a></p>
       <a href="https://github.com/leozqi">GitHub</a>
