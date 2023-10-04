@@ -105,5 +105,6 @@ code { font-size: 0.9em; }
 
 @media (max-width: 450px) {
 	#sidebar { position: static; width: 100%; }
-	#centerplate { position: static; margin: 0 auto 0 auto; width: 80%;  }
+	#centerplate { position: static; margin: 0 auto 0 auto; width: 80%; }
+	section { max-width: 80%; }
 }
