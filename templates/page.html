@@ -43,12 +43,5 @@
 <script defer src="en-us.js"></script>
 <script defer>
 $('p').hyphenate('en-us');
-
-$(document).ready(function() {
-    $('.dropdown').on('touchstart touchend', function(e) {
-        e.preventDefault();
-        $(this).toggleClass('hoverEffect');
-    });
-});
 </script>
 {% endblock %}

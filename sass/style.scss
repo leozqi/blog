@@ -34,16 +34,15 @@ nav a { border: 1px dotted; }
 
 h2 a { color: inherit; }
 
-#bookmarks { display: flex; flex-direction: column; } 
+#bookmarks { display: flex; flex-direction: column; height: max-content; } 
 #sidebar { width: var(--sidebar-width); background-color: #c7b285; position: fixed; bottom: 0; top: 0; border: 10px inset }
-#centerplate { top: 20%; left: 20px; position: fixed; width: calc(var(--sidebar-width) - 5vw); padding: 20px; }
+#centerplate { width: calc(var(--sidebar-width) - 5vw); padding: 20px; }
 
 .hanging { padding-left: 22px; text-indent: -22px; }
 
 .dropdown { display: block; margin: 0 0 2vh auto; }
 .dropdown:hover .dropdown-content { display: block; }
 .dropdown:hover .dropbtn { width: var(--ribbon-expand-width); }
-.hoverEffect { display: block; }
 
 .dropbtn { display: block; width: var(--ribbon-width); }
 .dropbtn { border: none; cursor: pointer; filter: drop-shadow(2px 3px 2px rgba(black, 0.5)); background-color: #ff2b24; transition: width 0.5s; color: inherit;}
