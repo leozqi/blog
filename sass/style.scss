@@ -15,14 +15,14 @@
 :root {
 	--fonts-sans-serif: LibertinusSans;
 	--fonts-serif: LibertinusSerif;
-	--bg-colour: #e5e5e5;
+	--bg-colour: #eeeeee;
 	--sidebar-width: 25vw;
 	--ribbon-width: 80px;
 	--ribbon-expand-width: 100px;
 }
 
 html { overflow-y: scroll; height: 100%; padding-bottom: 10px; }
-html { background-color: var(--bg-colour); font-family: var(--fonts-serif); }
+html { background-color: var(--bg-colour); font-family: var(--fonts-serif); color: #444; font-size: 18px; }
 html { scroll-behavior: smooth; scroll-padding-top: 5em; }
 body { margin: 0; height: 100%; }
 
@@ -30,13 +30,12 @@ p { text-align: justify; text-justify: inter-word; }
 main { margin-left: calc(var(--sidebar-width) + 8vw); margin-right: auto; }
 section { width: 50vw; max-width: 40em; padding: 2vh 0 10em 0; }
 nav { font-family: var(--fonts-sans-serif); display: flex; flex-wrap: wrap;}
-nav a { border: 1px dotted; }
-
-h2 a { color: inherit; }
+h2 a { color: #inherit; }
 
 #bookmarks { display: flex; flex-direction: column; height: max-content; } 
-#sidebar { width: var(--sidebar-width); background-color: #c7b285; position: fixed; bottom: 0; top: 0; border: 10px inset }
-#centerplate { width: calc(var(--sidebar-width) - 5vw); padding: 20px; }
+#sidebar { width: var(--sidebar-width); background-color: #444; position: fixed; bottom: 0; top: 0; font-size: 12px; color: #eeeeee; }
+#centerplate { width: calc(var(--sidebar-width) - 5vw); padding: 20px; font-size: 16px; }
+#centerplate a { color: #eeeeee; font-family: var(--fonts-sans-serif); }
 
 .hanging { padding-left: 22px; text-indent: -22px; }
 
@@ -45,7 +44,7 @@ h2 a { color: inherit; }
 .dropdown:hover .dropbtn { width: var(--ribbon-expand-width); }
 
 .dropbtn { display: block; width: var(--ribbon-width); }
-.dropbtn { border: none; cursor: pointer; filter: drop-shadow(2px 3px 2px rgba(black, 0.5)); background-color: #ff2b24; transition: width 0.5s; color: inherit;}
+.dropbtn { border: none; cursor: pointer; filter: drop-shadow(2px 3px 2px rgba(black, 0.5)); background-color: black; transition: width 0.5s; color: inherit;}
 .dropbtn {
   --f: 0px;  /* control the folded part*/
   --r: 15px; /* control the ribbon shape */
