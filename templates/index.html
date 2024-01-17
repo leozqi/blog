@@ -5,7 +5,7 @@
 
 {{ section.content | safe }}
 
-{% set notes = get_section(path="_index.md") %}
+{% set notes = get_section(path="blog/_index.md") %}
 <ul class="cardholder">
 {% for page in notes.pages %}
   <a class="cardlink" href="{{ page.permalink }}">

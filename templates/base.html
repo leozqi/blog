@@ -4,66 +4,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>leozqi{% if page.title %} &#183; {{ page.title }} {% endif %}</title>
+  <title>Leo Qi{% if page.title %} &#183; {{ page.title }} {% endif %}</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="shortcut icon" type="image/svg" href="/favicon.svg">
-
   {% block head %}{% endblock %}
 </head>
 
 <body>
-
 <div id="sidebar">
-  <div id="bookmarks">
-    {% set root = get_section(path="./_index.md") %}
-    {% for section in root.subsections | sort | reverse %}
-      {% set sub = get_section(path=section) %}
-      <div class="dropdown">
-        <a class="dropbtn" href="{{ sub.permalink }}"><span>&#x25BC; {{ sub.title }}</span></a>
-        <div class="dropdown-content">
-        {% if not sub.pages %}
-          <a href="#">Nothing here yet!</a>
-        {% endif %}
-        {% for page in sub.pages %}
-          <a href="{{ page.permalink }}">{{ page.title }}</a>
-        {% endfor %}
-        </div>
-      </div>
+  <center>
+  <div id="profile">
+    <div>
+      <img src="/profile.webp" alt="Leo Qi"/>
+    </div>
+    <div id="links">
+      <a href="mailto:leo@leozqi.com"><i class="icon">&#xf0e0;</i></a>
+      <a href="https://github.com/leozqi"><i class="icon">&#xf09b;</i></a>
+      <a href="https://www.linkedin.com/in/leozqi"><i class="icon">&#xf30c;</i></a>
+      <a href="/atom.xml"><i class="icon">&#xf143;</i></a>
+    </div>
+  </div>
+  </center>
+
+  <h2>I write about ...</h2>
+  <div id="tags">
+    {% set tags = get_taxonomy(kind="tags") %}
+    {% for tag in tags.items %}
+      <a href="{{ tag.permalink }}"><span class="tag">{{ tag.name }}</span></a>
     {% endfor %}
   </div>
-
-  <div id="centerplate">
-    <h2><a href="/">Leo's blog</a></h2>
-    <nav>
-      <a href="mailto:leo@leozqi.com">leo@leozqi.com</a></p>
-      <a href="https://github.com/leozqi">GitHub</a>
-      <a href="https://codeberg.org/leozqi">Codeberg</a>
-      <a href="/atom.xml">Atom/RSS</a>
-    </nav>
-
-    <div id="toc">
+  <div id="toc">
     {% if page.toc %}
     <details open="">
       <summary>Table of contents:</summary>
       <ul>
-        {% for h1 in page.toc %}
-          <li>
-            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-            {% if h1.children %}
-              <ul>
-                {% for h2 in h1.children %}
-                  <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
+      {% for h1 in page.toc %}
+        <li>
+          <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+          {% if h1.children %}
+            <ul>
+              {% for h2 in h1.children %}
+                <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
       </ul>
     </details>
     {% endif %}
-    </div>
   </div>
-</div>
+</div><!-- Sidebar -->
+
 <main>
   <section>
     {% block content %} {% endblock %}
