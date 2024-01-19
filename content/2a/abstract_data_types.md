@@ -1,34 +1,39 @@
 +++
-title="250.1 · Abstract data types (ADT)"
-date=2023-09-15
+title="Abstract data types (ADT)"
+date=2024-01-19
+[taxonomies]
+tags=["ece250", "algorithms"]
 +++
 
-Everything on a computer is described by a data structure that translates information into arrangements of digital bits.
-We create _abstract data types_ (ADTs) by separating the _internal representation_ of a data structure (how it stores data), and what the data structure _does_ (its API and exposed methods).
+_Abstraction_ is the separation of **interface** with **implementation**.
+An **abstract data type** (ADT) is a data type that is characterized by its operations.
+These are the actions that can be performed on it.
 
-In this way, ADTs are data types that are defined only by the operations that can be performed on them.
-The details on how ADTs store and make data accessible is hidden from code that uses the type.
-Code that uses ADTs
+Each abstract data type has a set of well-defined operations.
+These operations are of two types: to _read_ or _write_ data.
+The end result is that the internal details on how ADTs store data and make data accessible are hidden from their users.
 
-## Containers of elements
+## Containers all the way down
 
-We may describe data structures that serve as containers of elements using ADTs.
-There are a set of common operations that are performed on ADTs.
-These operations are: [1]
+Fundamentally, every data type is a _container_.
 
-- Creating a container
-- Deleting a container
-- Copying (shallow and deep) a container
-- Splitting a container
-- Taking the union of (merging) containers
-- Taking the intersection (identifying common elements) of containers
+Different containers store different things.
+However, there are a few operations we expect most containers to have.
+This is the set of common operations that are performed on ADTs:
 
-Common operations on the elements inside a container include: [1]
+- _Creating_ a container
+- _Deleting_ a container
+- _Copying_ a container
+- _Splitting_ a container
+- _Merging_ containers
 
-- Getting the number of elements contained
-- Adding a new object into the container
-- Determining if an object is in the container (membership)
-- Removing an object from the container
+We can also perform actions on the items inside a container:
+
+- _Identifying common items_ in two containers
+- _Counting_ the number of items
+- _Adding_ items
+- _Finding_ an item
+- _Removing_ an item
 
 For example, a `list` is a common construct in many programming languages.
 A list can be wholly described by its methods, the simplest which are:
@@ -39,9 +44,15 @@ A list can be wholly described by its methods, the simplest which are:
 - Remove the last item of the list.
 - Get the size of the list.
 
-Different implementations of the list will have different internal representations of the data, but all of them will provide the same functionality.
+Different implementations of the list will have different internal representations of the data.
+However, all of them will provide the same functionality.
 
-This graph of "the structure of abstract data structures" [1] by Prof. Douglas Harder illustrates the relationships between different ADTs well:
+## Abstract data type types
+
+ADTs can be grouped based on the types of operations they support.
+They will be optimized based on _access pattern_, or how the items they contain are most often written to and read from.
+
+This graph of "the structure of abstract data structures" [1] describes the relationships between different ADTs well:
 
 {% mermaid(height="200px") %}
 flowchart TD;
@@ -190,4 +201,7 @@ R. Sedgewick, K. Wayne, _Algorithms_, 4th ed. USA: Addison-Wesley, 2011.
 {% end %}
 {% bib(link="https://web.mit.edu/6.031/www/fa17/classes/10-abstract-data-types/") %}
 MIT. (2017). 6.031 — Software Construction, "Reading 10: Abstract Data Types." [Online].
+{% end %}
+{% bib(link="https://uwaterloo.ca/scholar/z399huan/home") %}
+Patrick Huang, _Abstract Data Types_, Accessed 2024-01-19.
 {% end %}
