@@ -12,10 +12,11 @@
 
 <body>
 <div id="sidebar">
+  <div id="float">
   <center>
   <div id="profile">
     <div>
-      <img src="/profile.webp" alt="Leo Qi"/>
+      <a href="/"><img src="/profile.webp" alt="Leo Qi"/></a>
     </div>
     <div id="links">
       <a href="mailto:leo@leozqi.com"><i class="icon">&#xf0e0;</i></a>
@@ -26,35 +27,21 @@
   </div>
   </center>
 
-  <h2>I write about ...</h2>
+  <h2>I <a href="/">write</a> about ...</h2>
   <div id="tags">
     {% set tags = get_taxonomy(kind="tags") %}
-    <span class="tag"><a href="/resume.pdf">🐙 Resume</a></span>
     {% for tag in tags.items %}
       <span class="tag"><a href="{{ tag.permalink }}">🐙 {{ tag.name }}</a></span>
     {% endfor %}
   </div>
-  <div id="toc">
-    {% if page.toc %}
-    <details open="">
-      <summary>Table of contents:</summary>
-      <ul>
-      {% for h1 in page.toc %}
-        <li>
-          <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-          {% if h1.children %}
-            <ul>
-              {% for h2 in h1.children %}
-                <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-      </ul>
-    </details>
-    {% endif %}
-  </div>
+
+  {% if page.toc %}
+  <p>
+  <a href="#toc"><em>Back to table of contents ▲</em></a>
+  </p>
+  {% endif %}
+
+  </div><!-- float -->
 </div><!-- Sidebar -->
 
 <main>

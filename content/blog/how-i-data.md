@@ -1,9 +1,40 @@
 +++
-title="Abstract data types (ADT)"
+title="A look at data (bit-by-bit)"
 date=2024-01-19
 [taxonomies]
-tags=["ece250", "algorithms"]
+tags=["data"]
 +++
+
+From a high level, what is data?
+It is **information that we care about.**
+It can be text.
+It can represent pretty landscapes or accounting figures, or results of experiments.
+In this post, _we_ care about how we
+
+- gather
+- record
+- analyse
+- otherwise make use of
+
+data on the computer.
+
+Programmers represent data as patterns of "bits."
+If you go deep enough down, you'll find that these patterns are arbitrary.
+A specification or practice says that a particular arrangement represents _something_.
+
+<img src="https://what-if.xkcd.com/imgs/a/34/twitter_screenshot.png" />
+
+[_What if?_](https://what-if.xkcd.com/34/)
+
+For example, the Unicode `utf-8` standard governs the patterns of bits to represent most (if not all) texts in the world.
+Each "character" is represented by a different pattern of 0s and 1s.
+A program reads the patterns of 0s and 1s and "renders" their actual representation onto the screen.
+
+What happens when different standards collide? ASCII is another scheme for representing texts.
+However, it only covers 128 characters that were all people were expected to type back then.
+UTF-8 solves the problem by having the first 128 bit patterns be exactly compatible with the ASCII standard.
+
+## Abstraction
 
 _Abstraction_ is the separation of **interface** with **implementation**.
 An **abstract data type** (ADT) is a data type that is characterized by its operations.
@@ -68,6 +99,16 @@ flowchart TD;
 	I --> Stack
 	I --> Queue
 {% end %}
+
+## Analysis
+
+ADTs are designed to offer performance guarantees based on the number of elements stored.
+This is based on the access patterns that it was designed to support.
+As a general rule of thumb, ADTs chosen to be close to a program's access patterns will perform well.
+
+The guarantees for efficiency are expressed in **big-O notation**, which offers a worst-case guarantee of performance based on varying the number of items stored in a container.
+
+In a basic analogy, if a container has $n$ items, big-O notation of the form $\mathcal{O}(n)$ means that operations will perform in linear time: an increase of items $C$ items will increase running time by a proportion of $C$.
 
 
 ## Implementation
@@ -181,6 +222,30 @@ void pop(Node *head) {
 ```
 {% end %}
 
+## Queues
+
+A _queue_ is a base data type that is a First-in First-out sequence of items.
+
+Its primary functions are _enqueing_ items and _dequeing_ items.
+
+Enqueueing items means placing items at the back of the line.
+
+Dequeueing items means taking the first item at the front of the line out.
+
+A description of the queue abstract data type:
+
+```cpp
+template <typename T>
+class Queue {
+public:
+  void enqueue(const T & item);
+  T dequeue(); //might choose to return void instead
+  T & peek();
+  const T & peek() const;
+  int numItems() const;
+};
+```
+
 ## Trees
 
 ## Partial orders
@@ -191,7 +256,7 @@ void pop(Node *head) {
 
 ## Vector spaces
 
-## Bibliography
+## References
 
 {% bib(link="https://ece.uwaterloo.ca/~dwharder/aads/") %}
 D. Harder. (2023). Algorithms and Data Structures [Online].

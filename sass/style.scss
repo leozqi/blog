@@ -64,7 +64,7 @@ body {
 	margin: 0;
 	height: 100%;
 	display: grid;
-	grid-template-columns: max(25vw, 200px) auto 10vw;
+	grid-template-columns: 250px auto 5vw;
 	grid-template-areas:
 		"left	middle	right"
 }
@@ -72,8 +72,18 @@ body {
 	grid-area: "left";
 	background-color: #444;
 	color: #eee;
-	padding: 0 1vw 0 2vw;
+	padding: 0 3vw 0 2vw;
 	height: 100%;
+}
+#sidebar a {
+	color: #eee;
+}
+#sidebar a:visited {
+	color: #eee;
+}
+#float {
+	min-width: 220px;
+	position: fixed;
 }
 #sidebar img {
 	padding: 2vh 0 0 0;
@@ -106,26 +116,40 @@ main {
 	grid-area: "middle";
 	color: #444;
 	height: 100%;
+	font-size: 16px;
 }
 
+main section {
+	max-width: 45vw;
+	margin: 0 auto 0 auto;
+	padding-bottom: 10vh;
+}
+main img {
+	max-width: 40vw;
+}
 #tags {
-	width: 100%;
-	display: inline-block;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1vw;
 }
 #tags a {
 	text-decoration: none;
 	width: min-content;
+	color: #cc6600;
+}
+#tags a:visited {
+	color: #cc6600;
 }
 .tag {
 	width: max-content;
 	border-radius: 25px;
-	padding: 0.5em 1em 0.5em 1em;
+	padding: 4px 10px;
 	background-color: #bfb;
-	display: block;
-	margin: 1vh 1vw 1vh 1vw;
+	font-size: 0.8em;
 	font-family: var(--fonts-sans-serif);
 }
-p { text-align: justify; text-justify: inter-word; }
 nav { font-family: var(--fonts-sans-serif); display: flex; flex-wrap: wrap;}
 
 .hanging { padding-left: 22px; text-indent: -22px; }
@@ -148,11 +172,12 @@ blockquote { padding-left: 20px; border-left: 1px dotted; opacity: 80%; }
 .cardholder {
 	display: flex;
 	list-style-type: none;
-	margin: 0;
+	margin: 5vh 0 0 0;
 	padding: 0;
 	flex-flow: column wrap;
 	gap: 2vh;
 }
+#toc { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); margin-top: 5vh; padding: 5px 3em 0.2em 1em; width: max-content; }
 .card { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.1s; padding: 1em 3em 1em 1em; }
 .card:hover { box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); }
 .cardlink { color: inherit; text-decoration: inherit; }
@@ -163,12 +188,6 @@ blockquote { padding-left: 20px; border-left: 1px dotted; opacity: 80%; }
 .definition { color: #bd2b2b; }
 .box p,.box li { color: black; margin-top: 0.5em; padding-top: 0; }
 .box summary { color: blue; text-decoration: underline; }
-#toc details ul,details li { position: relative; }
-#toc details li::before, details li::after { content: ""; position: absolute; left: -12px; }
-#toc details li::before { border-top: 1px solid #000; top: 9px; width: 8px; height: 0; }
-#toc details li::after { border-left: 1px solid #000; height: 100%; width: 0px; top: 2px; }
-#toc details li:last-child::after { height: 8px; }
-#toc details li { list-style-type: none; }
 pre { overflow: auto; padding: 10px 0 10px 0; background-color: color-mix(in srgb, var(--bg-colour) 60%, white) !important; border-radius: 25px; padding: 10px; }
 pre span { font-size: 0.9em; }
 code { font-size: 0.9em; }
