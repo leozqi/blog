@@ -172,6 +172,12 @@ This relative size is characterized by the radius ratio (r/R) where $r$ is the r
 
 <img src="/images/coordination-number.png" />
 
+The **percentage ionic character** of a bond can be approximated as:
+
+$$IC = 1 - e^{(-\frac{1}{4}(X_A - X_B)^2)}$$
+
+$$\\%IC = 100 * IC$$
+
 ## Materials selection
 
 ## Glossary
