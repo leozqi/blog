@@ -49,6 +49,7 @@
 	--sidebar-width: 25vw;
 	--ribbon-width: 80px;
 	--ribbon-expand-width: 100px;
+	grid-template-areas: inherit;
 }
 html {
 	overflow-y: scroll;
@@ -194,3 +195,25 @@ code { font-size: 0.9em; }
 .mermaid { overflow: auto; background-color: color-mix(in srgb, var(--bg-colour) 60%, white); border-radius: 25px; padding: 10px; }
 .katex { font-size: 1.0em !important; padding: 0 0.1em 0 0.1em; }
 
+@media (max-width: 600px) {
+body {
+	grid-template-areas:
+		"left"
+		"middle"
+		"right";
+	grid-template-columns: 100%;
+}
+#float {
+	position: static;
+}
+#sidebar {
+	height: max-content;
+	padding: 0 5vw 5vh 5vw;
+}
+main {
+	width: auto;
+}
+main section {
+	max-width: 80vw;
+}
+}
