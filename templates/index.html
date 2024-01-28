@@ -5,18 +5,12 @@
 
 {{ section.content | safe }}
 
+<h2>Recent posts</h2>
+
 {% set notes = get_section(path="blog/_index.md") %}
-<ul class="cardholder">
+<ul>
 {% for page in notes.pages %}
-  <a class="cardlink" href="{{ page.permalink }}">
-    <li class="card">
-      <div class="cardheader">
-        <h3>{{ page.title }}</h3>
-        <time><em>{{ page.date | date(format="%d %B, %Y") }}</em></time>
-      </div>
-      {{ page.summary | safe }}
-    </li>
-  </a>
+  <li><time><em>{{ page.date | date(format="%Y-%m-%d") }}</em></time>&emsp;<a class="post-title" href="{{ page.permalink }}">{{ page.title }}</a></li>
 {% endfor %}
 </ul>
 
