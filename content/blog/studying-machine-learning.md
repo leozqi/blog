@@ -8,6 +8,6 @@ tags=["books-about"]
 
 Here is a collection of books that I have read about machine learning.
 
-{% bib(link=http://neuralnetworksanddeeplearning.com/) %}
+{% bib(link="http://neuralnetworksanddeeplearning.com/") %}
 Michael A. Nielson, _Neural Networks and Deep Learning_, Updated 
 {% end %}

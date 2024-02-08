@@ -1,6 +1,7 @@
 +++
 title="Op-amps!"
 date=2024-01-24
+draft=true
 [taxonomies]
 tags=["uwaterloo-2a"]
 +++

@@ -1,22 +1,20 @@
 +++
-title="A look at data (bit-by-bit)"
+title="Keeping in mind data"
 date=2024-01-19
+draft=true
 [taxonomies]
 tags=["data"]
 +++
 
 From a high level, what is data?
-It is **information that we care about.**
-It can be text.
-It can represent pretty landscapes or accounting figures, or results of experiments.
-In this post, _we_ care about how we
+Data refers to the **information you care about** when designing any project.
+This could be profile pics, accounting figures, or experiment results.
+Projects that accomplish anything will **collect**, **store**, **analyze**, and **generate** data.
 
-- gather
-- record
-- analyse
-- otherwise make use of
 
-data on the computer.
+
+
+
 
 Programmers represent data as patterns of "bits."
 If you go deep enough down, you'll find that these patterns are arbitrary.
@@ -256,7 +254,9 @@ public:
 
 ## Vector spaces
 
-## References
+* * *
+
+[^huang]: Patrick Huang, _ECE 250 Lecture Notes_, "Abstract Data Types", Accessed 2024-01-19, [Online](https://uwaterloo.ca/scholar/z399huan/home)
 
 {% bib(link="https://ece.uwaterloo.ca/~dwharder/aads/") %}
 D. Harder. (2023). Algorithms and Data Structures [Online].
