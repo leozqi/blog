@@ -6,7 +6,7 @@ template = "index.html"
 I'm Leo Qi, a computer engineering student at the University of Waterloo.
 
 I'm interested in how computers can work for **people**.
-Finite-state analysis, modelling of phenomena, psychology experimentation, statistics and data analysis:
+Numerical modelling, psychology experiments, statistics and data analysis:
 
 - **Interdisciplinary projects** with a computational component
 - **Embedded devices**, time-series data analysis

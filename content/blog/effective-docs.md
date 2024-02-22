@@ -598,3 +598,9 @@ Make sure that insight sharing is clearly visible and celebrated within the team
 Good luck!
 TheRealNGenius • on Feb 18, 2022
 company's
+
+# References
+
+[^Brooks]: Ethan Brooks, _How To Write Stuff No One Else Can_, Published 2024-02-09, [[Online]](https://thewritetoroam.com/2024/02/how-to-write-stuff-no-one-else-can)
+
+[^Quarto]: Quarto Maintainers, _Creating a Book_, Accessed 2024-02-19, [[Online]](https://quarto.org/docs/books/)

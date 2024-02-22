@@ -90,7 +90,7 @@ body {
 	top: 20px;
 }
 #sidebar img {
-	padding: 2vh 0 0 0;
+	padding: 0 0 0 0;
 	width: 180px;
 	margin: 0 auto 0 auto;
 	border-radius: 50%;
@@ -164,7 +164,6 @@ nav { font-family: var(--fonts-sans-serif); display: flex; flex-wrap: wrap;}
 
 h1,h2,h3,h4,h5 { font-family: var(--fonts-sans-serif); }
 details { margin: 1em 0 1em 0; }
-details ul { max-height: 30%; overflow-y: auto; margin: 0.2em 0 0.2em 0; padding-left: 2.5em; }
 .title { margin-bottom: 0.2em; }
 .card * { margin: 0 0 0 0; }
 .card time { font-size: 0.8em; margin-top: auto; }
@@ -198,7 +197,7 @@ blockquote { padding-left: 20px; border-left: 1px dotted; opacity: 80%; }
 .box summary { color: blue; text-decoration: underline; }
 pre { overflow: auto; padding: 10px 0 10px 0; background-color: color-mix(in srgb, var(--bg-colour) 60%, white) !important; border-radius: 25px; padding: 10px; }
 pre span { font-size: 0.9em; }
-code { font-size: 0.9em; }
+code { font-size: 0.7em; }
 .mermaid { overflow: auto; background-color: color-mix(in srgb, var(--bg-colour) 60%, white); border-radius: 25px; padding: 10px; }
 .katex { font-size: 1.0em !important; padding: 0 0.1em 0 0.1em; }
 
