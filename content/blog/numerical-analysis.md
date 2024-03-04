@@ -1,6 +1,7 @@
 +++
 title="Numerical analysis in engineering"
 date=2024-02-12
+draft=true
 +++
 
 # Numerical stability

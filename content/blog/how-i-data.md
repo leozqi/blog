@@ -83,7 +83,7 @@ They will be optimized based on _access pattern_, or how the items they contain 
 
 This graph of "the structure of abstract data structures" [1] describes the relationships between different ADTs well:
 
-{% mermaid(height="200px") %}
+{% mermaid(height="200px", caption="ADTs") %}
 flowchart TD;
 	A[Set/Map] -->|Adjacency relation| B[Graph]
 	B -->|Equivalence relation| C[Partition]
@@ -147,7 +147,7 @@ That is because the ADT describing both implementations is similar or even ident
 
 _Sets_ and _maps_ are ADTs that describe a collection of objects with no relation to one another.
 
-{% mermaid(height="100px") %}
+{% mermaid(height="100px", caption="Sets") %}
 classDiagram
 	class A {
 		data
@@ -163,7 +163,7 @@ That means each item is unique.
 A _map_ is an extension of a set where each item is identified by a unique _hash_ or _key_.
 The items are still not related to one another, but can be accessed programmatically using their identifiers.
 
-{% mermaid(height="100px") %}
+{% mermaid(height="100px", caption="Maps") %}
 classDiagram
 	class key_1 {
 		value_1
@@ -179,7 +179,7 @@ The basis for these three _ordered_ ADTs is the linked list.
 We define a "struct" (multiple primitive data types packed together into one sized sector) that has a pointer (or address) of the item next in the list.
 By following these "next" addresses, the data structure creates an ordered relationship of consecutive data items.
 
-{% mermaid(height="10vh") %}
+{% mermaid(height="10vh", caption="Linked list") %}
 flowchart LR
 	A[Item 0] -->|Node *next| B[Item 1] -->|Node *next| C[NULL]
 {% end %}

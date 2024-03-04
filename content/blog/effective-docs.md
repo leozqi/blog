@@ -604,3 +604,5 @@ company's
 [^Brooks]: Ethan Brooks, _How To Write Stuff No One Else Can_, Published 2024-02-09, [[Online]](https://thewritetoroam.com/2024/02/how-to-write-stuff-no-one-else-can)
 
 [^Quarto]: Quarto Maintainers, _Creating a Book_, Accessed 2024-02-19, [[Online]](https://quarto.org/docs/books/)
+
+[^RepenningSterman]: Nelson P. Repenning, John D. Sterman, _Nobody Ever Gets Credit for Fixing Problems that Never Happened: Creating and Sustaining Process Improvement_, Published 2001, [[PDF]](https://web.mit.edu/nelsonr/www/Repenning=Sterman_CMR_su01_.pdf)
