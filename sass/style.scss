@@ -227,11 +227,13 @@ body {
 	width: 100%;
 }
 #sidebar {
+	position: static;
 	height: max-content;
 	padding: 0 5vw 5vh 5vw;
 	width: auto;
 }
 main {
+	position: static;
 	width: auto;
 }
 main section {
