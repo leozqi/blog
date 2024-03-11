@@ -1,5 +1,5 @@
 +++
-title="Mathematics for engineering"
+title="Mathematics for computer engineering"
 date=2024-03-03
 [taxonomies]
 tags=["uwaterloo-2a"]
@@ -9,6 +9,33 @@ tags=["uwaterloo-2a"]
 > They make themselves, when the nature of the subject has developed itself.
 >
 > - Oliver Heaviside
+
+Topics to be covered:
+
+- Calculus up to differential equations
+- Signal theory
+- Linear algebra
+- Complex analysis, residue theorem (Needham)
+- Eigenvectors, Gram-Schmidt on inner product spaces, Hilbert spaces
+- Functional analysis (Kreyszig)
+- Dynamics (Strogatz, Hale & Kocak)
+- Statistics, and stochastic processes
+- Calculus of variations and lagrange multipliers
+- Perturbation theory
+- Dominant balance and saddle-point/steepest descent (analytic approximation)
+- Wavelets (signal processing)
+- Information and coding theory (McKay, Princeton Companion to Applied Mathematics)
+- Analytic approximation (Bender, orszag)
+
+
+# Engineering units
+
+{% definition(ref="Radian") %}
+A unit of angle measure, defined such that one radian is the angle subtended at the centre of a circle by an arc equal in length to the radius.
+{% end %}
+
+_Dimensional analysis_ is the analysis of relationships between different physical quantities by identifying their base quantities and the units of measurement, and tracking these dimensions as calculations are performed.
+
 
 # Formal power series
 
@@ -83,11 +110,28 @@ A relation of the form
 
 $$F(s) = \int_\alpha^\beta K(s, t)\\, f(t)\\, dt$$
 
-where $K(s, t)$ is the _kernel_ of the transformation, and the limits of integration $\alpha$ and $beta$ may be infinite but must satisfy $\alpha < \beta$.
+where $K(s, t)$ is the _kernel_ of the transformation, and the limits of integration $\alpha$ and $\beta$ may be infinite but must satisfy $\alpha < \beta$.
 {% end %}
 
-An integral transform **maps** an equation from its original _function space_ ("domain") to another, where manipulating and solving the equation may be much easier than in the original domain.
-The solution can be mapped back to the originating domain using the inverse of the transform.
+An integral transform takes a function of _time_ and makes it a function of another variable.
+
+$$f(t): [0, \infty) \mapsto g(\tau): [a, \infty)$$
+
+> An integral transform **maps** an equation from its original _function space_ ("domain") to a different space.
+
+This is useful when the the new function is easily manipulated in terms of $\tau$ rather than $t$. 
+The solution can be mapped back to the time domain using the transform's _inverse_.
+
+A list of useful transforms:
+
+- _Fourier transform_: given a signal, the transform maps it into the function describing the frequencies present in the signal.
+- _Hilbert transform_: component of the analytic representation of a real-valued signal $u(t)$
+- _Laplace transform_: converts $f(t)$ to a function of a complex variable $s$: converts differentiation and integration in the time domain into multiplication and division in the Laplace domain.
+- _Poisson kernel_: solves the two-dimensional Laplace equation.
+- _Weierstrass transform_: the smoothed version of $f(t)$ obtained by averaging its values, weighted with a Gaussian function centered at $t$.
+
+Every integral transform is a _linear operator_ because the integration operation is linear.
+If the kernel is allowed to be a generalized function, thena ll linear operators are integral transforms (Schwartz kernel theorem).
 
 > To put the method of Laplace transforms into proper perspective, we consider the following hypothetical situation.
 > Suppose that we want to multiply the numbers 3.163 and 16.38 together, but that we have forgotten completely how to multiply.
