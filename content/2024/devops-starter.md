@@ -82,4 +82,6 @@ I don't know if there's any particularly easy way to hook into this activity.
 
 [^Siebenmann1]: ..., _Scheduling latency, IO latency, and their role in Linux responsiveness_, Published 2024-03-10, [[Online]](https://utcc.utoronto.ca/~cks/space/blog/linux/SystemResponseLatencyMetrics)
 
+[^Siebenmann2]: ..., _Everything that does TLS should log the SSL parameters used_, Published 2024-03-13, [[Online]](https://utcc.utoronto.ca/~cks/space/blog/sysadmin/SSLLogConnectionInfo)
 
+https://utcc.utoronto.ca/~cks/space/blog/sysadmin/UsageDataWhyCare

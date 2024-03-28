@@ -1,7 +1,6 @@
 +++
 title="Create effective project documentation"
 date=2024-01-27
-draft=true
 [taxonomies]
 tags=["essay"]
 +++
@@ -18,6 +17,30 @@ There are no set guidelines for writing documentation a lot of the time like in 
 Where there are standards, guidelines, and frameworks.
 
 Here is what I try to follow.
+https://diataxis.fr/application/
+
+# Make the process frictionless
+
+Above all, the best docs are the ones that are written.
+They should be collaborative.
+
+- for uses cases not explained in the docs, add a doc for it, and then link my Stack Overflow answer to the (newly created) official doc.
+
+Last, I would set the expectation that it's OK to feel like you're winging the documentation. I suspect a lot of engineers don't write docs because they feel they are bad writers and don't know what they're doing. Just focus on creating a safe space to creating docs and keeping them up-to-date first. Over time as you all use each other's docs you will figure out why they suck.
+We've been using a mix of tools until now, Guru, Google Docs... but have lacked discoverability, powerful search, and in Google the ability to create sites for teams, etc.
+
+
+Where is just a tool, don't get too locked into a tool just get one and use it. The important part is that IT will agree to move move your URLs around every few months.
+
+Interesting. For me it's a problem of speed. How fast can I find it, and how fast I can edit it.
+I rely on git repos using markdown because it's fast and I can search, however things like tables etc can get annoyingly complex to upkeep.
+phphphphp • on Feb 17, 2022
+I've not tried this at scale so it remains theory for me, but at a previous company, I proposed that we tackle this problem in the same way medical literature is managed by health organisations. That is, every page is owned and every page has an expiry: when a page expires, the owners are obligated to review it. The "yikes" part of that idea is that it feels burdensome, but that's because retaining and managing knowledge is burdensome and businesses should be measuring knowledge as an asset (or liability) and budgeting accordingly.
+Ultimately, most people are digital maximalists when they'd be better off being digital minimalists. I (in my personal life and in the small teams I work with) purposefully delete things that I do not wish to accept the burden of owning. Either something is important enough to justify the burden of ensuring it's accurate, or it isn't and it is deleted.
+
+I have found that thinking about documentation in these terms, it becomes clear what to document and what not to document, and it forces better practices elsewhere in the business -- like writing code that clearly communicates the why, or designing business processes that leverage a core set of business information.
+kaycebasques • on Feb 17, 2022
+One lesson learned from leading https://web.dev is that a lot of people, even technical ones, aren't comfortable with git + Markdown. And then there are people who are comfortable with it but feel that it's too much friction for simple docs updates.
 
 ## Developing a culture
 
@@ -58,26 +81,10 @@ Approaches tried and why we're not doing it.
 Have a way to search version history and full-text search /fuzzy matching for easy access.
 Tags are better than folders.
 
+# To process
+
 The more general concept behind that is called document life cycle. Ideally you would want to have different possible status, like draft, published, verified, outdated, archived. Most wiki tools don't handle that well. And make outdated = archived which is an issue as in your case, will not work, and outdated documents will keep polluting your knowledge base.
 
-Can 
-
-I used this approach when doing the DevRel for Chrome DevTools. I would browse Stack Overflow for uses cases not explained in the docs, add a doc for it, and then link my Stack Overflow answer to the (newly created) official doc.
-Semaphor • on Feb 17, 2022
-That is a great idea. We have a company-wide OneNote notebook with some (extremely) rudimentary documentation, I hope I’ll remember this the next time someone asks me a question, so I can add it there :)
-100011_100001 • on Feb 17, 2022
-Where is the documentation stored? One of my main blocks is how hard it is to update documentation.
-bluGill • on Feb 17, 2022
-Where is just a tool, don't get too locked into a tool just get one and use it. The important part is that IT will agree to move move your URLs around every few months.
-100011_100001 • on Feb 17, 2022
-Interesting. For me it's a problem of speed. How fast can I find it, and how fast I can edit it.
-I rely on git repos using markdown because it's fast and I can search, however things like tables etc can get annoyingly complex to upkeep.
-phphphphp • on Feb 17, 2022
-I've not tried this at scale so it remains theory for me, but at a previous company, I proposed that we tackle this problem in the same way medical literature is managed by health organisations. That is, every page is owned and every page has an expiry: when a page expires, the owners are obligated to review it. The "yikes" part of that idea is that it feels burdensome, but that's because retaining and managing knowledge is burdensome and businesses should be measuring knowledge as an asset (or liability) and budgeting accordingly.
-Ultimately, most people are digital maximalists when they'd be better off being digital minimalists. I (in my personal life and in the small teams I work with) purposefully delete things that I do not wish to accept the burden of owning. Either something is important enough to justify the burden of ensuring it's accurate, or it isn't and it is deleted.
-
-I have found that thinking about documentation in these terms, it becomes clear what to document and what not to document, and it forces better practices elsewhere in the business -- like writing code that clearly communicates the why, or designing business processes that leverage a core set of business information.
-kaycebasques • on Feb 17, 2022
 As a technical writer of 9+ years I can share some concrete experience related to your theory. The theory is right on the money. Assigning an owner and tracking last review date is a very effective practice. Google had a great system (go/fresh-source) in their internal doc infrastructure, g3doc. I learned recently that parts of Microsoft have a similar setup. You put an "owner" field in the YAML frontmatter of your doc (the value is the username of the person who owns the doc), as well as a "last review" field (value is last review date). Then you build a reporting system that tracks who is keeping their docs up-to-date and who is not. You can ensure that people don't game it (e.g. just updating the "last review" field without actually looking at the docs) by cross-referencing with other metrics, such as number of bugs opened that are related to that area of the docs.
 bobbydreamer • on Feb 20, 2022
 Yep. The same approach my org uses as well. There is a team, who deals with all orgs docs maintain it. There is a internal portal to submit and you start getting mails 2 months before expiry.
@@ -127,7 +134,6 @@ But beyond that, in terms of wrapping your head around information architecture,
 
 You can hire or find technical writers to give brown bag lunches on documentation basics. I would do it for you. Poke around on my HN profile and you'll find how to contact me.
 
-Last, I would set the expectation that it's OK to feel like you're winging the documentation. I suspect a lot of engineers don't write docs because they feel they are bad writers and don't know what they're doing. Just focus on creating a safe space to creating docs and keeping them up-to-date first. Over time as you all use each other's docs you will figure out why they suck.
 
 The Write The Docs conference videos on YouTube are also an excellent resource.
 maccard • on Feb 17, 2022 • 6 more
@@ -169,71 +175,10 @@ My goal is to let you "program" your organization through skills in a Knowledge 
 Here's an example of how to train your software engineers https://gainknowhow.com/software-companies.html
 buro9 • on Feb 17, 2022
 We (Grafana) are just about to roll out https://www.simpplr.com/ internally.
-We've been using a mix of tools until now, Guru, Google Docs... but have lacked discoverability, powerful search, and in Google the ability to create sites for teams, etc.
 
-Personally I use Obsidian and the files are sync'd via Syncthing.
 
-What I wish would exist: A markdown driven wiki with Git (or something like it) in the backend so that you can clone the info locally, or refer to the master version, and even stage big changes to an area, etc. - basically something halfway between Obsidian and Confluence I guess.
-depingus • on Feb 17, 2022
-I just spent some time looking at this. There's no reason you can't use Obsidian with git. Obsidian just saves md files in a basic folder structure. You can git init in the root of your Obsidian vault directory (.gitignore your .obsidian folder). There's even an "Obsidian Git" community plugin that does the git work for you.
-To serve your md files as a traditional wiki in browsers, there's a git backed wiki named Gollum that also uses md files in a basic folder structure. https://github.com/gollum/gollum You can see where I'm going with this.
 
-Gollum doesn't have user authentication or anything fancy, it just renders and edits md files. I tried it. There didn't seem to be a difference between Obsidian's and Gollum's markdown. When I committed my entire Obsidian vault to a git repo, I could still choose to have Gollum serve the entire vault, or just a subdirectory in the repo. I could also disable all editing in Gollum.
 
-While Obsidian is working directly with the md files, Gollum doesn't update until I actually commit the changes. Obsidian is basically an IDE for my wiki now.
-
-I was mostly satisfied with Joplin syncing to OneDrive prior to today's experiment. But now I think Obsidian + Git + Gollum deserves a closer look. It might be a bit overkill for my personal wiki, but it could work in a team setting if everyone works on the wiki like they would a normal git project.
-polote • on Feb 17, 2022
-Simpplr is in my opinion an inferior tool to Confluence or Notion. It works mostly well for static information and as a enterprise search tool, but won't help improving the underlying culture.
-As for you ask, the best solution that I've found, is to let people document things on Github and index those documents in another tool. That way there is no duplication, you let people use the tool they know, can use Markdown, but still benefit from searching, assigning owner, up to date date, rights ... That's how we do it at Dokkument
-jka • on Feb 17, 2022
-Have you heard of / explored Athens Research[1] (brief summarization: open source, multiplayer-if-cloud-or-self-hosted, YC-backed)?
-[1] - https://www.athensresearch.org/
-yabones • on Feb 17, 2022
-My solution (for personal notes etc) is to make a git repo with markdown files, then render it all with mkdocs on every push. In the past it was just a cron job running on a dumb little webserver (git pull && mkdocs build) to push the new changes every x minutes. Nowadays it's a bit more sophisticated with netlify building on main & PRs. Both are completely valid!
-Obviously it's not user-friendly at all. Only people who know how to use git can use it, which isn't great for collaboration with non-techie folks. Ideally, I'd build a little editor widget that could be embedded in the page...
-dotancohen • on Feb 17, 2022
-  > A markdown driven wiki with Git
-This is exactly what I do. Though lately I've been transitioning to org-mode for non-personal notes as I don't need them on mobile.
-Your users can use any Markdown editor that they like. But one person should be responsible for creating new documents, so that there will be consistency in naming and placing in the hierarchy. Naming things is hard, leave that part up to the Knowledge Base owner.
-denton-scratch • on Feb 17, 2022
-> leave that part up to the Knowledge Base owner.
-Well, that's against the philosophy of a wiki. Also, in a small team, nobody is the "knowledgebase owner" - he's just another developer. Putting a human in the workflow creates friction. But I'm totally with you on the "naming things" problem.
-
-A full-blown corporate knowledge management system is a repository you can throw anything into - invoices, emails, memos, reports, etc.; the system will automatically generate a knowledge taxonomy and article summaries. But such systems require much more maintenance effort than something simple like a wiki, and are overkill for a small team of developers.
-mplanchard • on Feb 17, 2022
-On iOS, PlainOrg and BeOrg do a good job of making your org notes readable, searchable, and (basically) editable. I have heard there are good apps for Android as well, but I can’t vouch for them personally.
-xenodium • on Feb 17, 2022
-Hey, nice surprise to see Plain Org mentioned (author here). Glad you find it useful.
-mplanchard • on Feb 23, 2022
-I’ve been using it since beta! It’s a great app, and I’m grateful to you for making it!
-kaycebasques • on Feb 17, 2022
-One lesson learned from leading https://web.dev is that a lot of people, even technical ones, aren't comfortable with git + Markdown. And then there are people who are comfortable with it but feel that it's too much friction for simple docs updates.
-dotancohen • on Feb 17, 2022
-For those who are uncomfortable with Git: My personal git notes repo has this script right there in the document root:
-  $ cat ~/Notes/sync.sh 
-  #!/usr/bin/env bash
-  git add *
-  git commit -am "$(hostname)"
-  git pull
-  git push
-  echo ''
-  git status
-That's good for 99% of my own use - and I'm a technical user. You can leave those last two lines off and redirect stdout to /dev/null. If there's an error on "sync" the user can call you over to handle what will likely be either a merge conflict or a network issue. Even for Windows users you can probably wrap that in a .bat file to be double-clicked on the desktop.
-And there are a ton of WYSIWYG Markdown editors. I've used Typora in the past.
-tempest_ • on Feb 17, 2022
-WikiJS can store its files in git (https://docs.requarks.io/storage/git) though it is not exactly easy to run as a stand alone app.
-therealasdf • on Feb 17, 2022
-AzureDevops wiki is exactly that. A git repo for markdown files
-pxtail • on Feb 17, 2022
-For some documentation we are using https://www.bookstackapp.com/ , we have also few instances for clients internal docs.
-What is especially nice (less for us, more for some of clients) is that it has clear, understandable and working out of the box ACL system in place - and this is not obvious or easy to setup/configure for many wiki-like projects out there.
-
-For maintenance and filling knowledge-base - I think that what's works for us is establishing and following rules, for example: one cannot mark feature as complete without creating/updating documentation page related to it, documentation maintenance is checklist element of task completion flow.
-pabs3 • on Feb 17, 2022
-The Diátaxis documentation framework is one I heard about recently, Ubuntu/Canonical are switching to it:
-https://diataxis.fr/ https://ubuntu.com//blog/the-future-of-documentation-at-cano...
-hdjjhhvvhga • on Feb 17, 2022 • 4 more
 Old style - an "intranet" wiki that is linked to from the main internal company page. No orphaned articles - each needs to fit in the hierarchy somehow that is obviously quite flexible. Searching is easy and gives instant results. As opposed to the current version of Google, you can use search operators and they work as expected. Because managers embraced it and encourage their reports to (actively) use it, it works - most of the time.
 The biggest challenge is outdated information: since the responsibility is shared, sometimes I come across articles that haven't been updated since 2011 - for example, because somebody left, and I see some bits aren't up to date anymore. But I feel uneasy about deleting the article or just doing anything about it unless it's one of "my own" or directly related to my department. But in spite of that, I think it's working quite well overall. I used Confluence in another company and it felt too invasive and in the end nobody used it.
 amattn • on Feb 17, 2022 • 1 more
@@ -594,10 +539,6 @@ Printing out and looking at https://app.wecomplish.no/overview might be a good p
 ## Time and incentives If a team always favours _doing_ work over _documenting_ or _improving_ work, there will never be time nor incentives to manage insight.
 
 Make sure that insight sharing is clearly visible and celebrated within the team on the same level as deliveries in order to slowly but surely build up an insight management culture over time.
-
-Good luck!
-TheRealNGenius • on Feb 18, 2022
-company's
 
 # References
 

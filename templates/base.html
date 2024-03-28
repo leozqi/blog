@@ -27,11 +27,13 @@
   </div>
   </center>
 
-  <h2><a href="/">I write about</a> ...</h2>
+  <h2>I <a href="/">write</a> about ...</h2>
   <div id="tags">
     {% set tags = get_taxonomy(kind="tags") %}
     {% for tag in tags.items %}
-      <span class="tag"><a href="{{ tag.permalink }}">🐙 {{ tag.name }}</a></span>
+      {% if tag.name != "featured" %}
+        <span class="tag"><a href="{{ tag.permalink }}">🐙 {{ tag.name }}</a></span>
+      {% endif %}
     {% endfor %}
   </div>
 

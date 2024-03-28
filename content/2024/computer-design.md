@@ -9,8 +9,20 @@ This is a survey of _computer system design_.
 It links ideas from "low-level" to "high-level" to show that they are really the same.
 It develops a mental model for design.
 
-As a low-level firmware/embedded developer, this is what you need to consider:
+Advice on developing projects:
 
+> Resist the urge to jump straight into implementation.
+> Use the API first.
+> Write out a few code snippets that use the API for common use cases.
+> How does it feel?
+> Can the user express their intent without friction and boilerplate?
+>
+> Putting user needs first pays off.
+>
+> - Lea Verou <@leaverou@front-end.social>
+
+> The primary benefit of TDD is not that it produces better implementations, but that it produces better APIs.
+> It forces engineers to do just that, since they have to *use* the APIs they are designing to write tests.
 
 # Performance
 
@@ -29,15 +41,17 @@ A computer's time performance is determined by three factors:
 2. Each machine code executes with a certain _clock cycle per instruction (CPI)_.
 
 
-## Processor design
+## Instruction set architecture
 
-RISC:
+> The RISC philosophy is that instruction sets are really compiler targets.
+> ISAs should provide a few simple primitives to generate high-performance code.
+> They should rip out complex hardware implementations to make what's left simple, uniform, and fast.[^Arpaci-Dusseau]
 
-key observation is that instruction sets are really compiler targets.
-All compilers really want are a few simple preimitives to generate high-performance code.
-Lets rip out as much from the hardware as possible, like microcode, to make what's left simple, uniform, and fast.[^Arpaci-Dusseau] 
+A processor's implementation determines the _clock cycle time_ and the number of _clock cycles per instruction (CPI)_ of all programs running on it.
 
-The implementation of the processor determines _clock cycle time_ and _clock cycles per instruction (CPI)_.
+When designing your system, the consideration is therefore:
+
+1. What level of compiler optimization should I perform up to. 
 
 In Patterson's book, LEGv8 serves as ISA.
 
@@ -52,7 +66,16 @@ The first two are identical:
 The simplicity and regularity of LEGv8 makes the execution of many instruction classes similar.
 
 
-## Memory addressing
+## Pipelining hazards
+
+{% definition(ref="Load hazard") %}
+A special case of data hazard: a dependent instruction following a `ldr` command must stall 1 cycle, even with data forwarding.
+
+(Loads can only forward from the `WB` stage)
+{% end %}
+
+
+## Paging
 
 {% definition(ref="Paging") %}
 _Paging_ is a way of partitioning memory blocks to remember **where we stored what**.
@@ -143,10 +166,17 @@ A TLB miss is handled by software most of the time:
 
 When creating a model
 
+### Map
 
-### Tables
+### Directional acyclic graph
 
-**Tables** such as those used in database programs or implemented themselves are another data storage method.
+### Priority queue
+
+### Deque
+
+### Table
+
+_Tables_ such as those used in database programs or implemented themselves are another data storage method.
 
 # Design takeaways
 
@@ -222,6 +252,8 @@ System design:
 - State should be stored in as few locations as possible.
 - The entirety of system state should be documented and able to be dumped, inspected.
 
+Reduction of states: systems should be continually planned such that the abstracted number of states is few.
+That is, global state between components should be almost non-existent.
 
 ## Performance via parallelism
 
@@ -246,6 +278,8 @@ System design:
 # References
 
 [^Arpaci-Dusseau]: Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau, _Operating Systems: Three Easy Pieces_, Version 1.10, [[Online]](https://pages.cs.wisc.edu/~remzi/OSTEP/) 
+
+[^Harder]: Douglas Wilhelm Harder, _Abstract Data Types_, Accessed 2024-03-11, [[Online]](https://ece.uwaterloo.ca/~dwharder/aads/Abstract_data_types/)
 
 [^Patterson]: David A. Patterson, _Computer Organization and Design_, Published x, [Book]
 
